@@ -1,5 +1,6 @@
 require_relative 'game'
 require 'csv'
+require_relative 'highscore'
 
 class Scores
   def initialize(csv_file)
@@ -17,17 +18,12 @@ class Scores
     save_to_csv
   end
 
-  def remove(index)
-    @score = @scores.delete_at(index)
-    save_to_csv
-  end
-
 
   private
 
    def load_csv
     CSV.foreach(@csv_file) do |row|
-      @scores << Score.new(row[0], row[1], row[2], row[3])
+      @scores << Highscore.new(row[0], row[1])
     end
   end
 

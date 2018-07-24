@@ -21,11 +21,10 @@ class Router
   def route_action(action)
     case action
     when 1 then @controller.list
-    when 2 then @controller.start_game
-    when 3 then @controller.destroy
-    when 4 then @controller.search
-    when 5 then @controller.mark
-    when 6 then stop
+    when 2 then @controller.single
+    when 3 then @controller.double
+    when 4 then @controller.computer
+    when 5 then stop
     else
       puts "Please press 1, 2, 3, 4, or 5"
     end
