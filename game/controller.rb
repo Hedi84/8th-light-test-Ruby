@@ -18,8 +18,8 @@ class Controller
   @view.display(@highscores)
   end
 
-  def name
-    # 1. Ask user for a name (view)
-    @view.ask_user_for("name")
+  def single
+  # ask player for name
+  player_name = @view.ask_user_for("name")
   end
 end
